@@ -5,16 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/25 06:34:01 by dcorenti          #+#    #+#              #
-#    Updated: 2023/02/03 19:27:24 by dcorenti         ###   ########.fr        #
+#    Created: 2023/02/05 19:06:21 by dcorenti          #+#    #+#              #
+#    Updated: 2023/02/06 18:11:53 by dcorenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	PhoneBook
+NAME			= Weapon
 
 SOURCE			=	main.cpp \
-					Contact.cpp \
-					PhoneBook.cpp \
+					HumanA.cpp \
+					HumanB.cpp \
+					Weapon.cpp
+					
 
 OBJECT			=	$(SOURCE:.cpp=.o)
 

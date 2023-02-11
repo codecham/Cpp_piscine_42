@@ -5,30 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 00:17:35 by dcorenti          #+#    #+#             */
-/*   Updated: 2022/11/23 00:51:00 by dcorenti         ###   ########.fr       */
+/*   Created: 2023/01/31 18:06:33 by dcorenti          #+#    #+#             */
+/*   Updated: 2023/02/08 21:31:22 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef Contact_hpp
+#define Contact_hpp
+
+#include <iostream>
 #include <string>
 
 class Contact
 {
 	public:
-		void ft_set_first_name();
-		void ft_set_last_name();
-		void ft_set_nickname();
-		void ft_set_phone_number();
-		void ft_set_darkest_secret();
-		void ft_get_first_name();
-		void ft_get_last_name();
-		void ft_get_nickname();
-		void ft_get_phone_number();
-		void ft_get_darkest_secret();
+		Contact();
+		Contact 	create_contact(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string secret);
+		void		set_firstName(std::string firstName);
+		void		set_lastName(std::string lastName);
+		void		set_nickName(std::string nickName);
+		void		set_phoneNumber(std::string phoneNumber);
+		void		set_darkestSecret(std::string darkestSecret);
+		std::string	get_firstName() const;
+		std::string	get_lastName() const;
+		std::string	get_nickName() const;
+		std::string	get_phoneNumber() const;
+		std::string	get_darkestSecret() const;
+
 	private:
-		std::string	first_name;
-		std::string	last_name;
-		std::string	nickname;
-		std::string phone_number;
-		std::string darkest_secret;
+		std::string m_firstName;
+		std::string m_lastName;
+		std::string m_nickName;
+		std::string m_phoneNumber;
+		std::string m_darkestSecret;
 };
+
+#endif

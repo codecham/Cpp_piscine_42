@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/25 06:34:01 by dcorenti          #+#    #+#              #
-#    Updated: 2023/02/03 19:27:24 by dcorenti         ###   ########.fr        #
+#    Created: 2023/02/04 20:10:35 by dcorenti          #+#    #+#              #
+#    Updated: 2023/02/11 19:42:29 by dcorenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	PhoneBook
+NAME			=	Account
 
-SOURCE			=	main.cpp \
-					Contact.cpp \
-					PhoneBook.cpp \
+SOURCE			=	test.cpp \
+					Account.cpp \
+					
 
 OBJECT			=	$(SOURCE:.cpp=.o)
 

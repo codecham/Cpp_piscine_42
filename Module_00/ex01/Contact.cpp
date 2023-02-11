@@ -5,63 +5,75 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 00:25:45 by dcorenti          #+#    #+#             */
-/*   Updated: 2022/11/23 00:56:49 by dcorenti         ###   ########.fr       */
+/*   Created: 2023/01/31 18:08:01 by dcorenti          #+#    #+#             */
+/*   Updated: 2023/02/04 19:34:43 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include <iostream>
 
-int	ft_is_digit(std::string str)
+Contact::Contact()
 {
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] < '0' || str[i] > '9')
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-void	Contact::ft_set_first_name()
-{
-	std::string input;
 	
-	this->first_name = input;
 }
 
-void	Contact::ft_set_last_name()
+Contact Contact::create_contact(std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string secret)
 {
-	std::string input;
-
-	this->last_name = input;
-}
-
-void	Contact::ft_set_nickname()
-{
-	std::string input;
+	Contact new_contact;
 	
-	this->last_name = input;
+	new_contact.m_firstName = firstName;
+	new_contact.m_lastName = lastName;
+	new_contact.m_nickName = nickName;
+	new_contact.m_phoneNumber = phoneNumber;
+	new_contact.m_darkestSecret = secret;
+	return (new_contact);
 }
 
-void	Contact::ft_set_phone_number()
+void Contact::set_firstName(std::string firstName)
 {
-	int			i;
-	std::string input;
+	m_firstName = firstName;
+}
 
-	i = 0;
-	while (1)
-	{
-		std::cout << "Enter your phone number: ";
-  		std::getline(std::cin, input);
-		if (ft_is_digit(input) == 0)
-			break ;
-		else
-			std::cout << "Phone number can only has digit!" << std::endl;
-	}
-	this->phone_number = input;
+void Contact::set_lastName(std::string lastName)
+{
+	m_lastName = lastName;
+}
+
+void Contact::set_nickName(std::string nickName)
+{
+	m_nickName = nickName;
+}
+
+void Contact::set_phoneNumber(std::string phoneNumber)
+{
+	m_phoneNumber = phoneNumber;
+}
+
+void Contact::set_darkestSecret(std::string darkestSecret)
+{
+	m_darkestSecret = darkestSecret;
+}
+
+std::string Contact::get_firstName() const
+{
+	return(m_firstName);
+}
+
+std::string Contact::get_lastName() const
+{
+	return(m_lastName);
+}
+std::string Contact::get_nickName() const
+{ 
+	return(m_nickName);
+}
+
+std::string Contact::get_phoneNumber() const
+{
+	return(m_phoneNumber);
+}
+
+std::string Contact::get_darkestSecret() const
+{
+	return(m_darkestSecret);
 }
