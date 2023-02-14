@@ -5,15 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/14 21:40:46 by dcorenti          #+#    #+#              #
-#    Updated: 2023/02/14 21:41:11 by dcorenti         ###   ########.fr        #
+#    Created: 2023/02/14 21:53:39 by dcorenti          #+#    #+#              #
+#    Updated: 2023/02/14 21:53:59 by dcorenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	HarlFilter
+NAME			=	FragTrap
 
 SRC				=	main.cpp \
-					Harl.cpp \
+					ClapTrap.cpp \
+					ScavTrap.cpp \
+					FragTrap.cpp \
 
 OBJS			=	$(SRC:.cpp=.o)
 

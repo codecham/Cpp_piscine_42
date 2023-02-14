@@ -5,15 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/14 21:40:46 by dcorenti          #+#    #+#              #
-#    Updated: 2023/02/14 21:41:11 by dcorenti         ###   ########.fr        #
+#    Created: 2023/02/14 21:57:49 by dcorenti          #+#    #+#              #
+#    Updated: 2023/02/14 21:57:57 by dcorenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	HarlFilter
+NAME			=	Zoo
 
 SRC				=	main.cpp \
-					Harl.cpp \
+					Animal.cpp \
+					Cat.cpp \
+					Dog.cpp \
+					WrongAnimal.cpp \
+					WrongCat.cpp \
 
 OBJS			=	$(SRC:.cpp=.o)
 

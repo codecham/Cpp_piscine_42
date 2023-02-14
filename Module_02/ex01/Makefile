@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/14 21:40:46 by dcorenti          #+#    #+#              #
-#    Updated: 2023/02/14 21:41:11 by dcorenti         ###   ########.fr        #
+#    Created: 2023/02/14 21:49:07 by dcorenti          #+#    #+#              #
+#    Updated: 2023/02/14 21:49:16 by dcorenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	HarlFilter
+NAME			=	Fixed
 
 SRC				=	main.cpp \
-					Harl.cpp \
+					Fixed.cpp \
 
 OBJS			=	$(SRC:.cpp=.o)
 

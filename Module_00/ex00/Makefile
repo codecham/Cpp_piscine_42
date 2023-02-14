@@ -5,48 +5,50 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/25 06:18:31 by dcorenti          #+#    #+#              #
-#    Updated: 2022/03/25 06:18:40 by dcorenti         ###   ########.fr        #
+#    Created: 2023/02/14 21:28:24 by dcorenti          #+#    #+#              #
+#    Updated: 2023/02/14 21:30:06 by dcorenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= megaphone
+NAME			=	Megaphone
 
-SOURCE			= megaphone.cpp
+SRC				=	megaphone.cpp \
 
-OBJECT			=	$(SOURCE:.cpp=.o)
+OBJS			=	$(SRC:.cpp=.o)
 
-COMPILE			= 	clang++
+CC				=	clang++
 
-FLAGS			= 	-Wall -Wextra -Werror -std=c++98
+RM				=	rm -rf
 
-RESET			= 	\033[0m
-GREEN 			= 	\033[38;5;46m
-WHITE 			= 	\033[38;5;15m
-GREY 			= 	\033[38;5;8m
-ORANGE 			= 	\033[38;5;202m
-RED 			= 	\033[38;5;160m
+CFLAGS			=	-Wall -Wextra -Werror -std=c++98
+
+RESET			=	\033[0m
+GREEN			=	\033[38;5;46m
+WHITE			=	\033[38;5;15m
+GREY			=	\033[38;5;8m
+ORANGE			=	\033[38;5;202m
+RED				=	\033[38;5;160m
+
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	@echo "$(GREEN)----------------------------------------------------"
+	@echo "Executable				./$(NAME) $(RESET)"
+
+$(OBJS): $(SRC)
+	@echo "$(GREY)Compiling...				$(RESET)"
+	$(CC) $(CFLAGS) -c $(SRC)
 
 all: $(NAME)
 
-%.o: %.cpp
-	@echo "$(GREY)Compiling...				$(WHITE)$<"
-	@$(COMPILE) $(FLAGS) -c $< -o $@
-
-$(NAME): $(OBJECT)
-	@echo "$(GREEN)----------------------------------------------------"
-	@$(COMPILE) $(FLAGS) $(OBJECT) -o $(NAME)
-	@echo "Executable				./$(NAME) $(RESET)"
-
 clean:
 	@echo "$(RED)----------------------------------------------------"
-	@/bin/rm -f $(OBJECT)
-	@echo "$(WHITE)REMOVED O-FILES $(RESET)"
+	$(RM) $(OBJS)
+	@echo "REMOVED O-FILES $(RESET)"
 
 fclean: clean
 	@echo "$(RED)----------------------------------------------------"
-	@/bin/rm -f $(NAME)
-	@echo "$(WHITE)REMOVED EXECUTABLE FILE $(RESET)"
+	$(RM) $(NAME)
+	@echo "REMOVED EXECUTABLE FILE $(RESET)"
 
 re: fclean all
 
