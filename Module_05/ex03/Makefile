@@ -6,7 +6,7 @@
 #    By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/14 21:14:47 by dcorenti          #+#    #+#              #
-#    Updated: 2023/02/18 23:03:41 by dcorenti         ###   ########.fr        #
+#    Updated: 2023/02/23 08:32:18 by dcorenti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRC				=	main.cpp \
 					PresidentialPardonForm.cpp \
 					RobotomyRequestForm.cpp \
 					ShrubberyCreationForm.cpp \
+					Intern.cpp \
 
 OBJS			=	$(SRC:.cpp=.o)
 
