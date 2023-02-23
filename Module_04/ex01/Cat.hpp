@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 23:26:20 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/13 04:26:59 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/02/23 02:02:14 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ class Cat: public Animal
 	public:
 		Cat();
 		Cat(const Cat& copy);
-		virtual ~Cat(void);
+		~Cat(void);
 		Cat& operator=(const Cat& copy);
 
-		virtual void	makeSound() const;
+		void			makeSound() const;
 		std::string 	getIdea(int index) const;
-		void 	 		setIdea(std::string idea, int index);
+		void 	 		setIdea(std::string idea);
 
 	private:
-		Brain* brain;
+		Brain* _brain;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 23:35:46 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/13 04:10:41 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/02/23 02:08:46 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,30 @@ Dog::Dog()
 {
 	std::cout << GREEN << "Constructor of Dog called" << RESET << std::endl;
 	_type = "Dog";
-	brain = new Brain;
+	_brain = new Brain;
 }
 
 Dog::Dog(const Dog& copy)
 {
 	std::cout << GREEN << "Constructor by copy of Dog called" << RESET << std::endl;
 	this->_type = copy._type;
+	_brain = new Brain(*copy._brain);
 }
 
 Dog::~Dog(void)
 {
 	std::cout << GREEN << "Destructor of Dog called" << RESET << std::endl;
-	delete brain;
+	delete _brain;
 }
 
 Dog&	Dog::operator=(const Dog& copy)
 {
 	std::cout << GREEN << "Operator = of Dog called" << RESET << std::endl;
 	if (this != &copy)
+	{
 		this->_type = copy._type;
+		this->_brain = new Brain(*copy._brain);
+	}
 	return (*this);
 }
 
@@ -54,11 +58,11 @@ void	Dog::makeSound() const
 
 std::string 	Dog::getIdea(int index) const
 {
-	return(brain->getIdea(index));
+	return(_brain->getIdea(index));
 }
 
-void 	Dog::setIdea(std::string idea, int index) 
+void 	Dog::setIdea(std::string idea) 
 {
-	brain->setIdea(idea, index);
+	_brain->setIdea(idea);
 }
 

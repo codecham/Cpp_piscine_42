@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 23:35:51 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/13 04:10:04 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/02/23 02:08:32 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,30 @@ Cat::Cat()
 {
 	std::cout << BLUE << "Constructor of Cat called" << RESET << std::endl;
 	_type = "Cat";
-	brain = new Brain;
+	_brain = new Brain;
 }
 
 Cat::Cat(const Cat& copy)
 {
 	std::cout << BLUE << "Constructor by copy of Cat called" << RESET << std::endl;
 	_type = copy._type;
+	_brain = new Brain(*copy._brain);
 }
 
 Cat::~Cat(void)
 {
 	std::cout << BLUE << "Destructor of Cat called" << RESET << std::endl;
-	delete brain;
+	delete _brain;
 }
 
 Cat&	Cat::operator=(const Cat& copy)
 {
 	std::cout << BLUE << "Operator = of Cat called" << RESET << std::endl;
 	if (this != &copy)
+	{
 		this->_type = copy._type;
+		this->_brain = new Brain(*copy._brain);
+	}
 	return (*this);
 }
 
@@ -54,11 +58,11 @@ void	Cat::makeSound() const
 
 std::string 	Cat::getIdea(int index) const
 {
-	return(brain->getIdea(index));
+	return(_brain->getIdea(index));
 }
 
-void 	Cat::setIdea(std::string idea, int index) 
+void 	Cat::setIdea(std::string idea) 
 {
-	brain->setIdea(idea, index);
+	_brain->setIdea(idea);
 }
 

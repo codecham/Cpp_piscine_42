@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 23:26:17 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/14 22:02:55 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/02/23 01:25:01 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Dog: public Animal
 	public:
 		Dog();
 		Dog(const Dog& copy);
-		virtual ~Dog(void);
+		~Dog(void);
 		Dog& operator=(const Dog& copy);
 
-		virtual void		makeSound() const;
+		void		makeSound() const;
 
 };
 

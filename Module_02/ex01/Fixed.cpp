@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 23:06:26 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/08 00:53:32 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:11:08 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ void Fixed::setRawBits(int const raw)
 float Fixed::toFloat() const
 {
 	return((float)(this->_raw_bits / (float)(1 << this->_fractional_bits)));
-
 }
 
 int Fixed::toInt() const
