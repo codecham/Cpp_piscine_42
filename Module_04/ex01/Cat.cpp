@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 23:35:51 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/23 02:08:32 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/02/24 08:59:22 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ Cat&	Cat::operator=(const Cat& copy)
 	std::cout << BLUE << "Operator = of Cat called" << RESET << std::endl;
 	if (this != &copy)
 	{
+		delete _brain;
 		this->_type = copy._type;
 		this->_brain = new Brain(*copy._brain);
 	}

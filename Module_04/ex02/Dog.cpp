@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 23:35:46 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/23 02:08:46 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/02/24 09:00:06 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ Dog&	Dog::operator=(const Dog& copy)
 	std::cout << GREEN << "Operator = of Dog called" << RESET << std::endl;
 	if (this != &copy)
 	{
+		delete _brain;
 		this->_type = copy._type;
 		this->_brain = new Brain(*copy._brain);
 	}
