@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   A.hpp                                              :+:      :+:    :+:   */
+/*   B.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 21:38:40 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/28 07:42:30 by dcorenti         ###   ########.fr       */
+/*   Created: 2023/02/28 07:43:54 by dcorenti          #+#    #+#             */
+/*   Updated: 2023/02/28 07:44:07 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef A_HPP
-#define A_HPP
+#ifndef B_HPP
+#define B_HPP
 #include "Base.hpp"
 
-class A : public Base
-{	
+class B : public Base
+{
 };
 
 #endif

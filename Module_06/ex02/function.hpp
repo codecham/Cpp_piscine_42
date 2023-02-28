@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   A.hpp                                              :+:      :+:    :+:   */
+/*   function.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 21:38:40 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/28 07:42:30 by dcorenti         ###   ########.fr       */
+/*   Created: 2023/02/28 08:02:17 by dcorenti          #+#    #+#             */
+/*   Updated: 2023/02/28 08:03:19 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef A_HPP
-#define A_HPP
-#include "Base.hpp"
+#ifndef FUNCTION_HPP
+#define FUNCTION_HPP
 
-class A : public Base
-{	
-};
+#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
+#include <cstdlib>
+#include <iostream>
+
+Base	*generate();
+void	identify(Base *p);
+void	identify(Base &p);
 
 #endif

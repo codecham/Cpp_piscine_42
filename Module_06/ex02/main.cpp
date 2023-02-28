@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   A.hpp                                              :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 21:38:40 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/28 07:42:30 by dcorenti         ###   ########.fr       */
+/*   Created: 2023/02/28 08:00:45 by dcorenti          #+#    #+#             */
+/*   Updated: 2023/02/28 08:06:47 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef A_HPP
-#define A_HPP
 #include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
+#include "function.hpp"
 
-class A : public Base
-{	
-};
+int main()
+{
+	Base *test = generate();
 
-#endif
+	identify(test);
+	identify(*test);
+
+	delete test;
+}
