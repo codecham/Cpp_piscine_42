@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 19:16:46 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/28 12:35:41 by dcorenti         ###   ########.fr       */
+/*   Created: 2023/02/28 08:40:26 by dcorenti          #+#    #+#             */
+/*   Updated: 2023/02/28 09:33:27 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
 
-Zombie* zombieHorde(int N, std::string name)
+template<typename T>
+void	swap(T &a, T &b)
 {
-	Zombie* hordeZombie;
-	int i;
+	T temp;
 
-	i = 0;
-	if (N <= 0)
-		return (NULL);
-	hordeZombie = new Zombie[N];
-	while (i < N)
-	{
-		hordeZombie[i].set_name(name);
-		i++;
-	}
-	return (hordeZombie);
+	temp = a;
+	a = b;
+	b = temp;
 }
+
+template<typename T>
+T const	&min(const T &a, const T &b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+template<typename T>
+T const	&max(const T &a, const T &b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+#endif

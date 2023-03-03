@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 21:50:55 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/14 21:50:55 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/02/28 15:42:41 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ FragTrap::FragTrap()
 	this->_hit_point = 100;
 	this->_energy_point = 100;
 	this->_attack_damage = 30;
-	this->_max_hit_point = 20;
+	this->_max_hit_point = 120;
 }
 
 FragTrap::FragTrap(std::string name)

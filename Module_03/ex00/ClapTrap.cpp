@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 17:13:59 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/12 21:38:43 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/02/28 15:12:02 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ ClapTrap::ClapTrap()
 	this->_name = "Unknow";
 	this->_hit_point = 10;
 	this->_energy_point = 10;
-	this->_attack_damage = 10;
+	this->_attack_damage = 0;
 	this->_max_hit_point = 20;
 }
 
@@ -36,7 +36,7 @@ ClapTrap::ClapTrap(std::string name)
 	this->_name = name;
 	this->_hit_point = 10;
 	this->_energy_point = 10;
-	this->_attack_damage = 10;
+	this->_attack_damage = 0;
 	this->_max_hit_point = 20;
 }
 
