@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/03 01:53:05 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/03/03 18:49:05 by dcorenti         ###   ########.fr       */
+/*   Created: 2023/03/03 21:41:48 by dcorenti          #+#    #+#             */
+/*   Updated: 2023/03/04 04:17:18 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
-#include <iostream>
+#include "Span.hpp"
 #define RESET   "\033[0m"
 #define RED     "\033[1;31m"
 #define GREEN   "\033[1;32m"
@@ -21,44 +20,28 @@
 #define CYAN    "\033[1;36m"
 #define GREY    "\033[38;5;8m"
 
-void	vectorTest()
+int main()
 {
-	std::vector<int> vec;
-	std::vector<int>::iterator it;
-	
+	Span sp(10000);
+	Span sp_2(1000);
+	std::vector<int> vector;
 	int i;
 
 	i = 0;
-	while (i < 10)
+	std::cout << GREY << "Try with a vector of size of 10000" << RESET << std::endl;
+	sp.addRange(1, 10000);
+	std::cout << "Shortest Span = " << BLUE << sp.shortestSpan() << RESET << std::endl;
+	std::cout << "Longest Span = " << BLUE << sp.longestSpan() << RESET << std::endl;
+	std::cout << std::endl;
+
+	std::cout << GREY << "Try with add an range of vector with iterators" << RESET << std::endl;
+	while(i < 100)
 	{
-		vec.push_back((i + 1) * 4);
+		vector.push_back(i + 1);
 		i++;
 	}
-	std::cout << "Find 12 in int vector:" << std::endl;
-	try
-	{
-		it = easyfind(vec, 13);
-		std::cout << *it << std::endl;
-		
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-}
-
-void	dequeTest()
-{
-	
-}
-
-void	listTest()
-{
-	
-}
-
-int main()
-{
-	vectorTest();
-	
+	sp_2.addRange(vector.begin(), vector.end());
+	std::cout << "Shortest Span = " << BLUE << sp_2.shortestSpan() << RESET << std::endl;
+	std::cout << "Longest Span = " << BLUE << sp_2.longestSpan() << RESET << std::endl;
+	std::cout << std::endl;
 }
