@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 21:28:22 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/19 08:33:45 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/03/15 22:57:03 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,3 @@ const char* RobotomyRequestForm::ErrorRobotomy::what() const throw()
 {
 	return "Robotomy failed";
 }
-

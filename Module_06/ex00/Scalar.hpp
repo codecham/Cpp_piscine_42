@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 09:08:58 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/24 21:06:26 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/03/08 21:19:04 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,7 @@ class Scalar
 		~Scalar(void);
 		Scalar& operator=(const Scalar& copy);
 
-		void	printChar() const;
-		void	printInt() const;
-		void	printFloat() const;
-		void	printDouble() const;
-		void	printAll() const;
-		bool	isChar(const char *str);
-		bool	isInt(const char *str);
-		bool	isFloat(const char *str);
-		bool	isDouble(const char *str);
-		bool	isPseudoLitteral(const char *str);
+		void	printAll();
 		void	convert(const char *str);
 
 	private:
@@ -53,6 +44,15 @@ class Scalar
 		bool	pseudo_float(std::string str);
 		bool	pseudo_double(std::string str);
 		void	change_to_inf(bool is_neg);
+		bool	isChar(const char *str);
+		bool	isInt(const char *str);
+		bool	isFloat(const char *str);
+		bool	isDouble(const char *str);
+		bool	isPseudoLitteral(const char *str);
+		void	printChar();
+		void	printInt();
+		void	printFloat();
+		void	printDouble();
 };
 
 #endif
