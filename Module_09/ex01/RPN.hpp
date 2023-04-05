@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 19:40:16 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/03/16 21:05:10 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/06 00:32:01 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 #include <string>
-#include <map>
+#include <stack>
 
 class RPN
 {
@@ -24,21 +24,15 @@ class RPN
 		RPN(const RPN& copy);
 		~RPN(void);
 		RPN& operator=(const RPN& copy);
-		bool run(char *str);
+		void	run(std::string str);
 
 	private:
-		std::map<int, int> _value;
-		std::map<int, char> _op;
-
-		bool checkValues(char value, char op);
-		int  subOperation(char *str);
-		bool addOperation(char value, char op);
-		void doOperations();
-		char getOp(const int index);
-		int	 getValue(const int index);
-		void printResult() const;
-		int _index;
-		int _result;
+		std::stack<float> _stack;
+		
+		bool doOp(char op);
+		bool isDigit(char c) const;
+		bool isOp(char c) const;
+		void erase_stack();
 };
 
 #endif
