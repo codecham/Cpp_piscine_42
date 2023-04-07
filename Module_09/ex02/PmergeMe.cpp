@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:13:23 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/03/20 19:47:18 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/07 05:07:47 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ PmergeMe::PmergeMe(const PmergeMe& copy)
 	_ve = copy._ve;
 	_ve_a = copy._ve_a;
 	_ve_b= copy._ve_b;
-	_time_li = _time_li;
-	_time_ve = _time_ve;
+	_time_li = copy._time_li;
+	_time_ve = copy._time_ve;
 }
 
 PmergeMe::~PmergeMe(void)
