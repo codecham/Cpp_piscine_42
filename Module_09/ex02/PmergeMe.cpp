@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:13:23 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/04/07 05:07:47 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/10 22:27:34 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ PmergeMe&	PmergeMe::operator=(const PmergeMe& copy)
 		_ve = copy._ve;
 		_ve_a = copy._ve_a;
 		_ve_b= copy._ve_b;
-		_time_li = _time_li;
-		_time_ve = _time_ve;
+		_time_li = copy._time_li;
+		_time_ve = copy._time_ve;
 	}
 	return(*this);
 }
@@ -90,8 +90,8 @@ bool	PmergeMe::checkIsInt(char *str)
 	value = strtol(str, &endptr, 10);
 	if (value > INT_MAX)
 		return (false);
-	_li.push_back((int)value);
-	_ve.push_back((int)value);
+	_li.push_back(static_cast<int>(value));
+	_ve.push_back(static_cast<int>(value));
 	return (true);
 }
 
@@ -139,13 +139,22 @@ bool	PmergeMe::checkArg(char **argv)
 void	PmergeMe::sort()
 {
 	unsigned long time;
+	std::list<int> tmp = _li;
 
+	tmp.sort();
+	if (tmp == _li)
+	{
+		std::cout << "Numbers are already sort" << std::endl;
+		return ;
+	}
 	time = getTime();
 	sortLi();
 	_time_li = getTime() - time;
 	time = getTime();
 	sortVe();
 	_time_ve = getTime() - time;
+	printList();
+	printTime();
 }
 
 bool	PmergeMe::printError(std::string str) const

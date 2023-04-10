@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 09:15:06 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/14 20:41:26 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/08 19:37:45 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void		Bureaucrat::setGrade(int grade)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << BLUE << this->_name << RESET << " cannot be incremented" << '\n';
+		std::cerr << BLUE << this->_name << RESET << " cannot be set" << '\n';
 	}
 }
 
@@ -144,11 +144,11 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat)
 
 const char*	Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "Grade too High";
+	return ("Grade too High");
 }
 
 const char*	Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "Grade too Low";
+	return ("Grade too Low");
 }
 

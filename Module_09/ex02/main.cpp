@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:24:51 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/03/16 19:28:55 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/10 22:23:39 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int main(int argc, char **argv)
 	if (!test.checkArg(argv))
 		return (0);
 	test.sort();
-	test.printList();
-	test.printTime();
+	// test.printList();
+	// test.printTime();
 }
