@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 23:59:29 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/03/20 18:47:38 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/18 22:29:45 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,7 +154,7 @@ bool	BitcoinExchange::checkDate(std::string& date, std::string& file_name, int l
 	_tmp_date.y = (int)strtol(years.c_str(), &endptr, 10);
 	_tmp_date.m = (int)strtol(month.c_str(), &endptr, 10);
 	_tmp_date.d = (int)strtol(day.c_str(), &endptr, 10);
-	if (_tmp_date.y < 2009)
+	if (_tmp_date.y < 0)
 		return (ErrorMessage("Wrong years. Bitcoin starts in 2009", file_name, line));
 	if (_tmp_date.m < 1 || _tmp_date.m > 12)
 		return (ErrorMessage("Wrong month. Must be between 1 and 12", file_name, line));
@@ -262,14 +262,20 @@ void	BitcoinExchange::printResult(std::string& date)
 	it = _c_database.begin();
 	value_in_db = -1;
 	if (_tmp_date < (*it).first)
-		std::cout << "Error: this date or lower date can't be found" << std::endl;
+	{
+		std::cout << "Error: this date: [" << _tmp_date.y << "-" <<_tmp_date.m << "-" << _tmp_date.d << "] or lower date can't be found" << std::endl;
+		return ;
+	}
 	while(it != _c_database.end() && (*it).first <= _tmp_date)
 	{
 		value_in_db = (*it).second;
 		it++;
 	}
 	if (value_in_db == -1)
-		std::cout << "Error: this date or lower date can't be found" << std::endl;
+	{
+		std::cout << "Error: this date: [" << _tmp_date.y << "-" <<_tmp_date.m << "-" << _tmp_date.d << "] or lower date can't be found" << std::endl;
+		return ;
+	}
 	else
 	{
 		result = value_in_db * _tmp_float;
