@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:13:23 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/04/10 22:27:34 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/18 22:41:36 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,26 +95,6 @@ bool	PmergeMe::checkIsInt(char *str)
 	return (true);
 }
 
-bool	PmergeMe::checkDouble()
-{
-	std::list<int> li_tmp(_li);
-	std::list<int>::iterator it_li;
-	std::list<int>::iterator it_li_tmp;
-
-	li_tmp.sort();
-	it_li = li_tmp.begin();
-	it_li_tmp = li_tmp.begin();
-	it_li_tmp++;
-	while (it_li_tmp != li_tmp.end())
-	{
-		if (*it_li == *it_li_tmp)
-			return(false);
-		it_li++;
-		it_li_tmp++;
-	}
-	return(true);
-}
-
 bool	PmergeMe::checkArg(char **argv)
 {
 	int i;
@@ -130,8 +110,6 @@ bool	PmergeMe::checkArg(char **argv)
 	}
 	if (i == 2)
 		return (printError("Need at least of 2 numbers for sorting"));
-	if (!checkDouble())
-		return (printError("Double numbers find"));
 	build_jacobsthal();
 	return(true);
 }
@@ -307,7 +285,7 @@ int		PmergeMe::binarycheckLi(std::list<int>::iterator& it, int value)
 
 	previous = it;
 	previous--;
-	if ((value > *previous && value < *it) || (value > *it && it == _li_a.end()))
+	if ((value >= *previous && value <= *it) || (value >= *it && it == _li_a.end()))
 	{
 		it = _li_a.insert(it, value);
 		return(0);
@@ -324,7 +302,7 @@ void	PmergeMe::binarysearchLi(int value)
 	int index;
 	
 	it = _li_a.begin();
-	if (value < *it)
+	if (value <= *it)
 	{
 		_li_a.push_front(value);
 		return ;
@@ -458,7 +436,7 @@ int  	PmergeMe::binarycheckVe(std::vector<int>::iterator& it, int value)
 
 	previous = it;
 	previous--;
-	if ((value > *previous && value < *it) || (value > *it && it == _ve_a.end()))
+	if ((value >= *previous && value <= *it) || (value >= *it && it == _ve_a.end()))
 	{
 		it = _ve_a.insert(it, value);
 		return(0);
@@ -476,7 +454,7 @@ void 	PmergeMe::binarysearchVe(int value)
 	int index;
 	
 	it = _ve_a.begin();
-	if (value < *it)
+	if (value <= *it)
 	{
 		it = _ve_a.insert(it, value);
 		return ;

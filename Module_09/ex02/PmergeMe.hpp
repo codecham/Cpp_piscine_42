@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:07:54 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/03/16 19:24:36 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/18 22:41:44 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ class PmergeMe
 
 		bool 			checkAllDigit(char *str) const ;
 		bool 			checkIsInt(char *str);
-		bool 			checkDouble();
 		bool 			printError(std::string str) const;
 		unsigned long 	getTime();
 		int 			jacobsthal(int n);

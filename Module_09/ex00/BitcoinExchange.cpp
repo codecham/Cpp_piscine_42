@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 23:59:29 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/04/18 22:29:45 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/19 21:55:37 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,7 +165,7 @@ bool	BitcoinExchange::checkDate(std::string& date, std::string& file_name, int l
 
 bool	BitcoinExchange::checkDay() const
 {
-	if (_tmp_date.d <= 0)
+	if (_tmp_date.d <= 0 || _tmp_date.d >= 32)
 		return (false);
 	if (_tmp_date.m == 2)
 	{
