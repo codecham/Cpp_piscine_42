@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:24:47 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/25 18:43:46 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/28 04:45:43 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,4 @@ int main()
 	std::cout << "Adress:\t\t" << BLUE << &Result << RESET << std::endl;
 	std::cout << "Result.c:\t" << CYAN << Result.c << RESET << std::endl;
 	std::cout << "Result.n:\t" << YELLOW << Result.n << RESET <<std::endl;
-
 }

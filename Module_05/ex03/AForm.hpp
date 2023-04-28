@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 21:05:11 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/19 08:00:13 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/29 01:07:55 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class AForm
 		AForm();
 		AForm(std::string name, int sign_grade, int exec_grade);
 		AForm(const AForm& copy);
-		~AForm(void);
+		virtual ~AForm(void);
 		AForm& operator=(const AForm& copy);
 		
 		std::string	getName() const;

@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:56:47 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/23 08:31:57 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/29 01:03:10 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ AForm	*Intern::makeForm(std::string form_name, std::string target)
 		i++;
 	}
 	std::cout << form_name << " is not a valid form" << std::endl;
+	return(NULL);
 }
 
 AForm 	*Intern::createShrubbery(std::string target)

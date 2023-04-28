@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 21:05:11 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/19 08:01:12 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/28 20:43:20 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ class Form
 		int	const 			_sign_grade;
 		int const 			_exec_grade;
 		void		checkGrade(int gradeSign, int gradeExec) const;
-		
 };
 
 std::ostream& operator<<(std::ostream& os, const Form &form);

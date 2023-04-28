@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 18:11:34 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/03/02 19:16:58 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/28 16:38:29 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ Array<T>::Array(unsigned int n)
 		i++;
 	}
 }
+
 template<typename T>
 Array<T>::Array(const Array& copy)
 {

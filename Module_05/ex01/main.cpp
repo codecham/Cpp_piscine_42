@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 22:30:23 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/19 08:03:02 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/28 23:00:43 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,12 @@ int main()
 
 	std::cout << "------------------------------------------------\n\n" << std::endl;
 	
-	// form_one.beSigned(allan);
 	allan.sign_form(form_one);
 	std::cout << "------------------------------------------------\n\n" << std::endl;
 
-	// form_tow.beSigned(allan);
 	allan.sign_form(form_tow);
 	std::cout << "------------------------------------------------\n\n" << std::endl;
 
-	// form_three.beSigned(allan);
 	allan.sign_form(form_three);
 	std::cout << "------------------------------------------------\n\n" << std::endl;
 

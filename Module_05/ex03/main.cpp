@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 22:42:39 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/19 08:33:29 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/29 01:12:39 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 #define RESET   "\033[0m"
 #define RED     "\033[1;31m"
 #define GREEN   "\033[1;32m"
@@ -26,30 +27,10 @@
 
 int main()
 {
-	Bureaucrat boss("Boss", 1);
-	Bureaucrat stagiaire("Stagiaire", 150);
-	ShrubberyCreationForm jardin("jardin");
-	RobotomyRequestForm frankenstien("Frankenstien");
-	PresidentialPardonForm Manu("Manu");
+	Intern Benjamin;
+	AForm* form;
+	AForm* badForm;
 
-	std::cout << GREY << "\n1) Form Error not signed" << RESET << std::endl;
-	std::cout << GREY << "------------------------------------------------" << RESET << std::endl;
-	boss.executeForm(jardin);
-	boss.executeForm(frankenstien);
-	boss.executeForm(Manu);
-
-	std::cout << GREY << "\n2) Form Error grade" << RESET << std::endl;
-	std::cout << GREY << "------------------------------------------------" << RESET << std::endl;
-	boss.sign_form(jardin);
-	boss.sign_form(frankenstien);
-	boss.sign_form(Manu);
-	stagiaire.executeForm(jardin);
-	stagiaire.executeForm(frankenstien);
-	stagiaire.executeForm(Manu);
-
-	std::cout << GREY << "\n3) Execute forms" << RESET << std::endl;
-	std::cout << GREY << "------------------------------------------------" << RESET << std::endl;
-	boss.executeForm(jardin);
-	boss.executeForm(Manu);
-	boss.executeForm(frankenstien);
+	form = Benjamin.makeForm("robotomy request", "Bender");
+	delete form;
 }

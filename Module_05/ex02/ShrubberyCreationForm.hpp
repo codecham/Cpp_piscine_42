@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 23:26:38 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/02/18 21:56:48 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/28 23:34:09 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ class ShrubberyCreationForm: public AForm
 
 	private:
 		std::string _target;
-
 };
 
 #endif
