@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 19:09:40 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/03/04 04:15:10 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/29 21:46:39 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,24 +58,55 @@ void	Span::add_number(int nb)
 	}
 }
 
+// unsigned int Span::shortestSpan()
+// {
+// 	std::vector<int>::iterator it;
+// 	int diff_min;
+// 	int diff_tmp;
+
+// 	try
+// 	{
+// 		if (this->_vec.size() < 2)
+// 			throw NoOccurenceFound();
+// 		std::sort(this->_vec.begin(), this->_vec.end());
+// 		it = this->_vec.end() - 1;
+// 		diff_min = *it - *--it;
+// 		while(it != _vec.begin())
+// 		{
+// 			diff_tmp = *it - *--it;
+// 			if (diff_tmp < diff_min)
+// 				diff_min = diff_tmp;
+// 		}
+// 		return(diff_min);
+// 	}
+// 	catch(const std::exception& e)
+// 	{
+// 		std::cerr << GREY << e.what() << RESET << '\n';
+// 		return(0);
+// 	}
+// }
+
 unsigned int Span::shortestSpan()
 {
+	std::vector<int> copy_vec = _vec;
 	std::vector<int>::iterator it;
+	std::vector<int>::iterator it_next;
 	int diff_min;
-	int diff_tmp;
 
 	try
 	{
-		if (this->_vec.size() < 2)
+		if (copy_vec.size() < 2)
 			throw NoOccurenceFound();
-		std::sort(this->_vec.begin(), this->_vec.end());
-		it = this->_vec.end() - 1;
-		diff_min = *it - *--it;
-		while(it != _vec.begin())
+		std::sort(copy_vec.begin(), copy_vec.end());
+		it = copy_vec.begin();
+		it_next = it + 1;
+		diff_min = *it_next - *it;
+		while (it_next != copy_vec.end())
 		{
-			diff_tmp = *it - *--it;
-			if (diff_tmp < diff_min)
-				diff_min = diff_tmp;
+			if ((*it_next - *it) < diff_min)
+				diff_min = *it_next - *it;
+			it++;
+			it_next++;
 		}
 		return(diff_min);
 	}
@@ -88,12 +119,14 @@ unsigned int Span::shortestSpan()
 
 unsigned int Span::longestSpan()
 {
+	std::vector<int> copy_vec = _vec;
+	
 	try
 	{
-		if (this->_vec.size() < 2)
+		if (copy_vec.size() < 2)
 			throw NoOccurenceFound();
-		std::sort(this->_vec.begin(), this->_vec.end());
-		return(this->_vec.at(this->_vec.size() - 1) - this->_vec.at(0));
+		std::sort(copy_vec.begin(), copy_vec.end());
+		return(copy_vec.at(copy_vec.size() - 1) - copy_vec.at(0));
 	}
 	catch(const std::exception& e)
 	{
@@ -127,13 +160,12 @@ void	Span::addRange(const std::vector<int>::iterator& begin, const std::vector<i
 	{
 		if (distance + this->_vec.size() > this->_size_max)
 			throw WrongRange();
-		this->_vec.insert(this->_vec.end(), begin, begin + (this->_size_max - this->_vec.size()));
+		this->_vec.insert(this->_vec.end(), begin, end);
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << GREY << e.what() << '\n';
 	}
-	
 }
 
 const char*	Span::IsFull::what() const throw ()

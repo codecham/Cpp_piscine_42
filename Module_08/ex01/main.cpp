@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 21:41:48 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/03/04 04:17:18 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/29 21:47:20 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int main()
 	std::cout << std::endl;
 
 	std::cout << GREY << "Try with add an range of vector with iterators" << RESET << std::endl;
-	while(i < 100)
+	while(i < 10)
 	{
-		vector.push_back(i + 1);
+		vector.push_back(i);
 		i++;
 	}
 	sp_2.addRange(vector.begin(), vector.end());

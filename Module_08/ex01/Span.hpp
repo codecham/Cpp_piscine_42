@@ -6,7 +6,7 @@
 /*   By: dcorenti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 18:52:18 by dcorenti          #+#    #+#             */
-/*   Updated: 2023/03/04 04:15:03 by dcorenti         ###   ########.fr       */
+/*   Updated: 2023/04/29 21:22:57 by dcorenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Span
 		unsigned int	longestSpan();
 		void			addRange(int begin, int end);
 		void			addRange(const std::vector<int>::iterator& begin, const std::vector<int>::iterator& end);
+		std::vector<int> 	_vec;
 		
 		class	IsFull : public std::exception
 		{
@@ -51,8 +52,7 @@ class Span
 		
 	private:
 		unsigned int		_size_max;
-		std::vector<int> 	_vec;
-
+		// std::vector<int> 	_vec;
 };
 
 #endif
